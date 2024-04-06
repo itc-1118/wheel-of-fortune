@@ -1,0 +1,11 @@
+.canvas-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .canvas-wrapper canvas {
+    display: block;
+    transform-origin: center;
+    position: absolute;
+  }
+  

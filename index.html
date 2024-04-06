@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幸运之轮</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="canvas-wrapper">
+      <canvas id="myCanvas" width="500" height="500"></canvas>
+      <canvas id="pointerCanvas" width="500" height="500"></canvas>
+    </div>
+    <button id="spinButton">开始旋转</button>
+    <script src="./js/core.js" defer></script>
+    <script>
+      window.onload = function () {
+        const config = {
+          totalSpinTime: 3000, // 总旋转时间（毫秒）
+          spinCycles: 5, // 旋转周期数
+          sectors: ["red", "blue", "green", "yellow", "orange", "purple"], // 扇形的数量（颜色数组的索引和值,固定6个，代码逻辑未做兼容）
+          targetSectorIndex: 1, // 设置要停留的扇形的索引，这里设置为第4个扇形（索引从0开始,逆时针）
+        };
+
+        const wheel = new WheelOfFortune(
+          document.getElementById("myCanvas"),
+          document.getElementById("pointerCanvas"),
+          document.getElementById("spinButton"),
+          config
+        );
+      };
+    </script>
+  </body>
+</html>
